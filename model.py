@@ -3195,7 +3195,8 @@ def mold_image(images, config):
     mold_image_dict = { 
 #            "resnet50": resnet_mold_image,
 #           "resnet101": resnet_mold_image,
-            "mobilenet224v1": mobilenet_mold_image
+            "mobilenet224v1": mobilenet_mold_image,
+            "vgg16":mobilenet_mold_image
     }
     
     if config.BACKBONE not in mold_image_dict:
@@ -3207,7 +3208,8 @@ def unmold_image(images, config):
     unmold_image_dict = {
 #            "resnet50": resnet_unmold_image,
  #           "resnet101": resnet_unmold_image,
-            "mobilenet224v1": mobilenet_unmold_image
+            "mobilenet224v1": mobilenet_unmold_image,
+            "vgg16":mobilenet_unmold_image
     }
 
     if config.BACKBONE not in unmold_image_dict:
@@ -3225,6 +3227,7 @@ def mobilenet_mold_image(images, config):
 def mobilenet_unmold_image(normalized_images, config):
     """Takes a image normalized with mobilenet_mold() and returns the original."""
     return ((normalized_images + 1)*127.5).astype(np.uint8)
+
 
 
 ############################################################
