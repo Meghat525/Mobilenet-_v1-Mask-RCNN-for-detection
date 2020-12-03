@@ -609,25 +609,28 @@ def vgg16_graph(img_input, architecture, alpha=1.0, train_bn=True):
     # Block 2
     x = Conv2D(128, (3, 3), activation='relu', padding='same', name='block2_conv1')(x)
     x = Conv2D(128, (3, 3), activation='relu', padding='same', name='block2_conv2')(x)
-    C2 = MaxPooling2D((2, 2), strides=(2, 2), name='block2_pool')(x)
+    C2 =x= MaxPooling2D((2, 2), strides=(2, 2), name='block2_pool')(x)
 
     # Block 3
     x = Conv2D(256, (3, 3), activation='relu', padding='same', name='block3_conv1')(x)
     x = Conv2D(256, (3, 3), activation='relu', padding='same', name='block3_conv2')(x)
     x = Conv2D(256, (3, 3), activation='relu', padding='same', name='block3_conv3')(x)
-    C3 = MaxPooling2D((2, 2), strides=(2, 2), name='block3_pool')(x)
+    C3 =x= MaxPooling2D((2, 2), strides=(2, 2), name='block3_pool')(x)
 
     # Block 4
     x = Conv2D(512, (3, 3), activation='relu', padding='same', name='block4_conv1')(x)
     x = Conv2D(512, (3, 3), activation='relu', padding='same', name='block4_conv2')(x)
     x = Conv2D(512, (3, 3), activation='relu', padding='same', name='block4_conv3')(x)
-    C4 = MaxPooling2D((2, 2), strides=(2, 2), name='block4_pool')(x)
+    C4 =x= MaxPooling2D((2, 2), strides=(2, 2), name='block4_pool')(x)
 
     # Block 5
     x = Conv2D(512, (3, 3), activation='relu', padding='same', name='block5_conv1')(x)
     x = Conv2D(512, (3, 3), activation='relu', padding='same', name='block5_conv2')(x)
     x = Conv2D(512, (3, 3), activation='relu', padding='same', name='block5_conv3')(x)
-    C5 = MaxPooling2D((2, 2), strides=(2, 2), name='block5_pool')(x)
+    C5 =x= MaxPooling2D((2, 2), strides=(2, 2), name='block5_pool')(x)
+    
+    
+    
     return [C1,C2,C3,C4,C5]
 
 ############################################################
